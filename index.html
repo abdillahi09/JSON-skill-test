@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fetching GitHub Users Data</title>
+    <style>
+       #c1 {
+           background-color: beige;
+           display: inline-block;
+       }
+    </style>
+</head>
+<body>
+    <h1>GitHub Users</h1>
+    <p>This file works when you have student.json file in the same folder.</p>
+    <button onclick="getInfo()">Load GitHub User</button><hr>
+    <div id="c1">
+        <span id="b1"></span><br>
+        <span id="b2"></span><br>
+        <span id="b3"></span><br>
+        <span id="b4"></span><br>
+        <span id="b5"></span><br>
+        <span id="b6"></span><br>
+    </div>
+    <script>
+        function getInfo(){
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET','student.json',true);
+            xhr.onload = function(){
+                let ihu = JSON.parse(this.responseText);
+                document.getElementById("b1").innerHTML = "Name: " + ihu.name;
+                document.getElementById("b2").innerHTML = "Age: " + ihu.age;
+                document.getElementById("b3").innerHTML = "Weight: " + ihu.weight;
+                document.getElementById("b4").innerHTML = "Height: " + ihu.height;
+                document.getElementById("b5").innerHTML = "Friends: " + ihu.friends;
+                document.getElementById("b6").innerHTML = "College: " + ihu.college.Name + " , " + ihu.college["city"] + " , " + ihu.college.Pincode;
+            }
+          xhr.send();
+        }
+ 
+    </script>
+</body>
+</html>

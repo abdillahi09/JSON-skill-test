@@ -1,0 +1,14 @@
+{
+    "name":"Abdillahi",
+    "age": 30,
+    "weight": 240,
+    "height": 6.4,
+    "friends": [
+        "Asha", "Nuradin", "Jama", "Mawlid"
+    ],
+    "college":{
+        "Name":"West Texas A&M University",
+        "city":"Canyon, TX",
+        "Pincode": 75849
+    }
+}
